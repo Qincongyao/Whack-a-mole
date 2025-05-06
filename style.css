@@ -1,7 +1,12 @@
 body {
-  text-align: center;
   font-family: sans-serif;
-  background-color: #f0f8ff;
+  text-align: center;
+  background-color: rgb(78, 97, 114);
+}
+
+#game {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .grid {
@@ -15,18 +20,19 @@ body {
 .hole {
   width: 100px;
   height: 100px;
-  background-color: #ddd;
+  background-color: #d86172;
   border-radius: 50%;
   position: relative;
   cursor: pointer;
 }
 
-.mole {
-  background-color: brown;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.hole.mole::before {
+  content: "";
   position: absolute;
-  top: 10px;
-  left: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: brown;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
 }
