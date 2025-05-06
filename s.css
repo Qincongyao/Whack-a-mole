@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #f0f8ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.mole {
+  background-color: brown;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
