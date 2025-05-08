@@ -1,8 +1,10 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background-color: rgb(78, 97, 114);
+  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/ChatGPT%20Image%20May%208%2C%202025%2C%2011_19_07%20AM.png') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 #game {
   max-width: 400px;
