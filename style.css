@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background-color: #fefbd8; /* 保留淡黄底色，非全屏草地 */
+  background-color: #fefbd8; 
 }
 
 #game {
@@ -9,14 +9,14 @@ body {
   margin: 0 auto;
   padding: 20px;
   background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/bg-grass.png') no-repeat center center;
-  background-size: cover; /* ✅ 填满整个容器，允许上下裁剪 */
+  background-size: cover;
   border-radius: 12px;
 }
 
 #score {
   font-size: 24px;
   font-weight: bold;
-  color: #ffffcc; /* 清新绿色 */
+  color: #ffffcc; 
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   margin-top: 10px;
   transition: transform 0.2s ease;
