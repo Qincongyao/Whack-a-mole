@@ -1,15 +1,27 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/ChatGPT%20Image%20May%208%2C%202025%2C%2011_19_07%20AM.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #fefbd8; /* 保留淡黄底色，非全屏草地 */
 }
-
 
 #game {
   max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
+  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/bg-grass.png') no-repeat center center;
+  background-size: cover; /* ✅ 填满整个容器，允许上下裁剪 */
+  border-radius: 12px;
 }
+
+#score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffcc; /* 清新绿色 */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
 
 .grid {
   display: grid;
@@ -19,10 +31,17 @@ body {
   margin-top: 20px;
 }
 
+#startBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 .hole {
   width: 100px;
   height: 100px;
-  background-color: #d86172;
+  background-color: #ccc;
   border-radius: 50%;
   position: relative;
   cursor: pointer;
@@ -31,10 +50,26 @@ body {
 .hole.mole::before {
   content: "";
   position: absolute;
-  width: 60px;
-  height: 60px;
-  background-color: brown;
-  border-radius: 50%;
-  top: 20px;
-  left: 20px;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/May%208%2C%202025%2C%2011_15_02%20AM.png') no-repeat center/contain;
+}
+
+
+.hole.mole.hit::before {
+  content: "🫠" !important;
+}
+
+#stopBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #d63031;
+  color: white;
+  border: none;
+  border-radius: 6px;
 }
