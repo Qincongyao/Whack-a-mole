@@ -1,27 +1,73 @@
 body {
-  font-family: sans-serif;
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
   text-align: center;
-  background-color: #fefbd8; 
+  background-color: #fefbd8; /* light yellow */
+  margin: 0;
+  padding: 0;
 }
 
 #game {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/bg-grass.png') no-repeat center center;
   background-size: cover;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #score {
   font-size: 24px;
   font-weight: bold;
-  color: #ffffcc; 
+  color: #ffffcc;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   margin-top: 10px;
   transition: transform 0.2s ease;
 }
 
+#score.bump {
+  transform: scale(1.2);
+  color: #e17055;
+}
+
+#startBtn,
+#stopBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: white;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#startBtn {
+  background-color: #2ecc71;
+}
+
+#startBtn:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
+}
+
+#stopBtn {
+  background-color: #e74c3c;
+}
+
+#stopBtn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
 
 .grid {
   display: grid;
@@ -31,45 +77,41 @@ body {
   margin-top: 20px;
 }
 
-#startBtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
 .hole {
   width: 100px;
   height: 100px;
-  background-color: #ccc;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
   border-radius: 50%;
   position: relative;
   cursor: pointer;
 }
 
-.hole.mole::before {
+.hole::before {
+  content: "🕳️"; /* hole emoji */
+}
+
+.hole.mole::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
-  transform: translate(-50%, -50%);
-  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/main/May%208%2C%202025%2C%2011_15_02%20AM.png') no-repeat center/contain;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -70%);
+  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/271c85cc1448eac80fa9036540c8d7dbfe53d9f4/mole.png') no-repeat center/contain;
 }
 
-
-.hole.mole.hit::before {
-  content: "🫠" !important;
-}
-
-#stopBtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: #d63031;
-  color: white;
-  border: none;
-  border-radius: 6px;
+.hole.mole.hit::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -70%);
+  background: url('https://raw.githubusercontent.com/Qincongyao/Whack-a-mole/271c85cc1448eac80fa9036540c8d7dbfe53d9f4/cry.png') no-repeat center/contain !important;
 }
